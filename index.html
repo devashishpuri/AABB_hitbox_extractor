@@ -15,14 +15,14 @@
 
         .app-item {
             position: relative;
-            width: 40%;
+            width: 48%;
             margin: auto;
         }
 
         #canvas-holder {
             position: relative;
-            height: 256px;
-            width: 256px;
+            height: 420px;
+            width: 420px;
         }
 
         #canvas {
@@ -37,7 +37,7 @@
             /* bottom: 0; */
             /* z-index: 0; */
             object-fit: contain;
-            object-position: left;
+            object-position: top left;
         }
 
         #reset {
@@ -56,8 +56,8 @@
     <div class="app-item">
         <h4>2. Drag the mouse to create a rectangle</h4>
         <div id="canvas-holder">
-            <img id="base-image" width="256" height="256">
-            <canvas id="canvas" width="256" height="256"></canvas>
+            <img id="base-image" width="420" height="420">
+            <canvas id="canvas" width="420" height="420"></canvas>
             <button id="reset">
                 Reset
             </button>
@@ -65,7 +65,7 @@
     </div>
     <div class="app-item">
         <h4>3. Fetch the relative coordinates for AABB as Left, Top, Width & Height respectilvely</h4>
-        <textarea id="result" rows="10" cols="32"></textarea>
+        <textarea id="result" rows="6" cols="48"></textarea>
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>

@@ -10,7 +10,7 @@ $(function () {
 
     // style the context
     ctx.strokeStyle = "blue";
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 1;
 
     // calculate where the canvas is on the window
     // (used to help calculate mouseX/mouseY)
@@ -123,17 +123,18 @@ $(function () {
     }
 
     function setResult() {
+        const dimention = 420;
         result = '';
 
         if (image.src) {
             result += `Image Dimentions: w: ${image.width} h: ${image.height}\n`;
 
             if (image.height > image.width) {
-                adjustedHeight = 256;
-                adjustedWidth = Math.round((image.width / image.height) * 256);
+                adjustedHeight = dimention;
+                adjustedWidth = Math.round((image.width / image.height) * dimention);
             } else if (image.width >= image.height) {
-                adjustedWidth = 256;
-                adjustedHeight = Math.round((image.height / image.width) * 256);
+                adjustedWidth = dimention;
+                adjustedHeight = Math.round((image.height / image.width) * dimention);
             }
             result += ` Adjusted Dimentions: w: ${adjustedWidth} h: ${adjustedHeight}\n`;
         }
@@ -142,10 +143,10 @@ $(function () {
             result += ` Rect: l: ${rectLeft} t: ${rectTop} w: ${rectWidth} h: ${rectHeight}`;
 
             // Adjusted Rect relative to Adjusted Dimentions
-            var adjustedLeft = (rectLeft / adjustedWidth).toFixed(2);
-            var adjustedTop = (rectTop / adjustedHeight).toFixed(2);
-            var adjustedRectWidth = (rectWidth / adjustedWidth).toFixed(2);
-            var adjustedRectHeight = (rectHeight / adjustedHeight).toFixed(2);
+            var adjustedLeft = (rectLeft / adjustedWidth).toFixed(3);
+            var adjustedTop = (rectTop / adjustedHeight).toFixed(3);
+            var adjustedRectWidth = (rectWidth / adjustedWidth).toFixed(3);
+            var adjustedRectHeight = (rectHeight / adjustedHeight).toFixed(3);
             result += ` Rect: l: ${adjustedLeft}% t: ${adjustedTop}% w: ${adjustedRectWidth}% h: ${adjustedRectHeight}%`;
         }
 
